@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="{% static 'css/output.css' %}">
 </head>
 <body>
+    {% include 'header.html' %}
     {% block content %}
     {% endblock %}
-    {% include 'main.html' %}
     {% include 'footer.html' %}
     <script src="{% static 'js/main.js' %}"></script>
 </body>

@@ -23,6 +23,7 @@ from blog import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.IndexView, name="main"),
+    path('publicaciones/', views.post_detail, name="post_detail"),
     path('https://www.linkedin.com/in/carlosrodriguez1205/', views.Linkedin, name="Linkedin"),
     path('https://github.com/Kkkrlos', views.Github, name="Github")
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
