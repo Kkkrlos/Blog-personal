@@ -12,5 +12,14 @@
     </div>
     <hr class="my-2">
     <h1 class="text-slate-600 font-semibold text-2xl my-2">Publicaciones disponibles:</h1>
+    {% if publicaciones %}
+        {% for publicacion in publicaciones %}
+            <div class="flex shadow-lg rounded-sm h-12 items-center hover:transform-cpu">
+                <img src="{{publicacion.autor.icono_perfil.url}}" alt="Icono del autor" class="w-8 h-8 ml-1">
+                <a href="" class="flex-grow text-center ml-5 text-blue-400 font-semibold justify-center hover:underline">{{publicacion.titulo}}</a>
+                <span class="text-sm mx-1 text-blue-400">{{publicacion.fecha}}</span>
+            </div>
+        {% endfor %}
+    {% endif %}
 </main>
 {% endblock %}
