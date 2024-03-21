@@ -18,6 +18,7 @@ class Categorias(models.Model):
 
 class Publicaciones(models.Model):
     titulo = models.CharField(verbose_name="Título de la publicación")
+    imagen = models.ImageField(verbose_name="Imagen para la publicación", upload_to="posts", null=False)
     autor = models.ForeignKey(Autor, on_delete=models.CASCADE)
     descripcion = models.TextField(verbose_name="Descripción de la publicación")
     categoria = models.ForeignKey(Categorias, on_delete=models.CASCADE)

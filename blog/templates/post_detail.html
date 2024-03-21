@@ -1,7 +1,24 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<main class="mx-auto relative" style="max-width: 36rem; margin-bottom: 4rem;">
-    <h1 class="text-3xl font-semibold text-slate-600 my-2">Publicaciones disponibles:</h1>
+<main class="flex justify-center items-center">
+    {% if publicaciones %}
+        {% for publicacion in publicaciones %}
+        <div class="h-96 w-72 shadow-xl rounded
+        hover:transform hover:scale-105 border hover:border-slate-400 transition-all my-4 mx-2">
+            <div class="">
+                <img src="{{publicacion.imagen.url}}" alt="{{publicacion.titulo}}" class="rounded" style="height: 286px; width: 286px;">
+            </div>
+            <h1 class="text-2xl text-center text-blue-400">{{publicacion.titulo}}</h1>
+            <div class="flex justify-center my-2">
+                <button class="rounded border-none bg-blue-600 text-white font-semibold text-center p-1">Ver publicación</button>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+
+    <h2 class="text-xl font-semibold text-red-700">¡No hay posts disponibles! ⚠️</h2>
+        
+    {% endif %}
 </main>
 {% endblock %}
