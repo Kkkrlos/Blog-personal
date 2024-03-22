@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Publicaciones
 # Create your views here.
 
@@ -9,6 +9,10 @@ def IndexView(request):
 def post_detail(request):
     publicaciones = Publicaciones.objects.all()
     return render(request, 'post_detail.html', {'publicaciones': publicaciones})
+
+def Post(request, id):
+    publicacion = get_object_or_404(Publicaciones, pk=id)
+    return render(request, "post_id.html", {'publicacion': publicacion})
 
 def Linkedin(request):
     return redirect('https://www.linkedin.com/in/carlosrodriguez1205/')

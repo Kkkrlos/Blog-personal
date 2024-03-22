@@ -1,7 +1,10 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<!-- Prueba -->
+<html lang="en" style="min-height: 100%;
+position: relative;">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +12,9 @@
     <link rel="shortcut icon" href="{% static 'blog-solid.svg' %}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'css/output.css' %}">
 </head>
-<body>
+<!-- Probando -->
+<body style="margin: 0; margin-bottom: 40px;">
+
     {% include 'header.html' %}
     {% block content %}
     {% endblock %}

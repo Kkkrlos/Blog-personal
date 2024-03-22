@@ -5,13 +5,14 @@
     {% if publicaciones %}
         {% for publicacion in publicaciones %}
         <div class="shadow-xl rounded
-        hover:transform hover:scale-105 border hover:border-slate-400 transition-all my-4 mx-2">
+        hover:transform hover:scale-105 border bg-stone-100 hover:border-slate-400 transition-all my-6 mx-2">
             <div class="">
-                <img src="{{publicacion.imagen.url}}" alt="{{publicacion.titulo}}" class="rounded" style="height: 286px; width: 286px;">
+                <img src="{{publicacion.imagen.url}}" alt="{{publicacion.titulo}}" class="rounded w-full" style="height: 286px; width: 286px;">
             </div>
-            <h1 class="text-xl text-center text-blue-400 m-2 truncate break-words">{{publicacion.titulo|truncatechars:20}}</h1>
+            <h1 class="text-xl text-center text-blue-400 m-2">{{publicacion.titulo}}</h1>
             <div class="flex justify-center my-2">
-                <button class="rounded border-none bg-blue-600 hover:bg-blue-500 transition-all text-white font-semibold text-center p-1">Ver publicación</button>
+                <a href="{% url 'Post' publicacion.id %}" class="rounded border-none bg-blue-600 hover:bg-blue-500 transition-all text-white font-semibold text-center p-1">Ver publicación
+                </a>
             </div>
             <div class="flex items-center">
                 <img src="{{publicacion.autor.icono_perfil.url}}" alt="" class="w-8 h-8 my-2 mx-2">
