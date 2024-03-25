@@ -2,7 +2,7 @@
 
 {% block content %}
 <main class="relative mx-auto" style="max-width: 48rem; margin-bottom: 4rem;">
-    <h1 class="text-slate-600 font-semibold text-3xl my-2">Sobre mí</h1>
+    <h1 class="my-2 text-3xl font-semibold text-slate-600">Sobre mí</h1>
     <hr>
     <h3 class="my-2 text-nowrap" style="font-size: 20px;">¡Hola! 🙋 Este es mi blog personal y es un gusto tenerte por aquí.</h3>
     <p>Publicaré cosas sobre <i>tecnología</i>, <i>literatura</i>, <i>temas varios!</i></p>
@@ -11,13 +11,13 @@
         <img width="48" height="48" src="https://img.icons8.com/external-others-iconmarket/64/external-colombia-flags-others-iconmarket.png" alt="Bandera de Colombia"/><p class="ml-1"><i>Barranquilla, Colombia</i></p>
     </div>
     <hr class="my-2">
-    <h1 class="text-slate-600 font-semibold text-2xl my-2">Publicaciones disponibles:</h1>
+    <h1 class="my-2 text-2xl font-semibold text-slate-600">Publicaciones disponibles:</h1>
     {% if publicaciones %}
         {% for publicacion in publicaciones %}
-            <div class="flex shadow-lg rounded-sm h-12 items-center hover:transform hover:scale-105 transition-all my-1">
+            <div class="flex items-center h-12 my-1 transition-all rounded-sm shadow-lg hover:transform hover:scale-105">
                 <img src="{{publicacion.autor.icono_perfil.url}}" alt="Icono del autor" class="w-8 h-8 ml-1">
-                <a href="" class="flex-grow text-center ml-5 text-blue-400 font-semibold hover:underline">{{publicacion.titulo}}</a>
-                <span class="text-sm mx-1 text-blue-400">{{publicacion.fecha}}</span>
+                <a href="{% url 'Post' publicacion.id %}" class="flex-grow ml-5 font-semibold text-center text-blue-400 hover:underline">{{publicacion.titulo}}</a>
+                <span class="mx-1 text-sm text-blue-400">{{publicacion.fecha}}</span>
             </div>
         {% endfor %}
     {% endif %}

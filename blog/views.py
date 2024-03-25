@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Publicaciones
+from .models import Publicaciones, Autor
 # Create your views here.
 
 def IndexView(request):
@@ -13,6 +13,10 @@ def post_detail(request):
 def Post(request, id):
     publicacion = get_object_or_404(Publicaciones, pk=id)
     return render(request, "post_id.html", {'publicacion': publicacion})
+
+def VistaAutores(request):
+    autores = Autor.objects.all()
+    return render(request, 'autors.html' ,{"autores": autores})
 
 def Linkedin(request):
     return redirect('https://www.linkedin.com/in/carlosrodriguez1205/')

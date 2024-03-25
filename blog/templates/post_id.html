@@ -1,13 +1,25 @@
-{% extends "layout.html" %}
+{% load static %}
 
-{% block content %}
-<main class="my-2 flex-1">
-    <div class="flex">
-        <img src="{{publicacion.imagen.url}}" alt="{{publicacion.titulo}}" class="m-4" height="384" width="384">
-        <div class="">
-            <h1 class="text-3xl text-center text-wrap text-blue-400 my-2 font-bold">{{publicacion.titulo}}</h1>
-            <p>{{publicacion.descripcion|safe}}</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="shortcut icon" href="{% static 'blog-solid.svg' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/output.css' %}">
+</head>
+<body>
+    {% include 'partials/navbar.html' %}
+    <main class="flex-1 my-2">
+        <div class="flex">
+            <img src="{{publicacion.imagen.url}}" alt="{{publicacion.titulo}}" class="m-4" height="384" width="384">
+            <div class="w-full">
+                <h1 class="my-2 text-3xl font-bold text-center text-blue-400 ">{{publicacion.titulo}}</h1>
+                <p>{{publicacion.descripcion|safe}}</p>
+            </div>
         </div>
-    </div>
-</main>
-{% endblock %}
+    </main>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
