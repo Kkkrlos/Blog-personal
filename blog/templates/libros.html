@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1 class="my-3 text-xl text-center">Hola! 👋 Esta es una sección donde publico libros que considero de vital interés para quien esté visitando este blog</h1>
+<hr class="my-3">
+<main class="flex justify-center mb-8 320x566:flex-col">
+    {% for libro in libros %}
+        <div class="mx-4 transition-all border rounded bg-stone-200 lg:hover:scale-105 320x566:mb-3 320x566:mx-0" style="height: 450px; width: 320px;">
+            <h1 class="my-2 font-semibold text-center">{{libro.titulo}}</h1>
+            <div class="flex items-center justify-center">
+                <img src="{{libro.portada.url}}" alt="Portada de {{libro.titulo}}" class="" style="width: 140px; height: 180px;">
+            </div>
+            <p class="my-2 text-center">Libro de <strong>{{libro.autor}}</strong></p>
+            <p class="ml-2">Categoría: {{libro.categoria}}</p>
+            <p class="mx-2">{{libro.descripcion|truncatechars:160}}</p>
+            <div class="flex items-center justify-center">
+                <a href="{{libro.archivo.url}}" download="{{libro.titulo}}" class="p-1 mt-2 text-white transition-all bg-red-700 rounded">Descargar libro</a>
+            </div>
+        </div>
+    {% endfor %}
+</main>
+{% endblock %}

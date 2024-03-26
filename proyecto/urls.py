@@ -25,6 +25,7 @@ urlpatterns = [
     path('', views.IndexView, name="main"),
     path('publicaciones/', views.post_detail, name="post_detail"),
     path('publicacion/<int:id>', views.Post, name="Post"),
+    path('libros/', views.Libros, name="libros"),
     path('https://www.linkedin.com/in/carlosrodriguez1205/', views.Linkedin, name="Linkedin"),
     path('https://github.com/Kkkrlos', views.Github, name="Github")
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
