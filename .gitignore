@@ -6,6 +6,10 @@ node_modules
 
 package-lock.json
 
+blog/static/css
 blog/static/js
+blog/static/images
 
-media/posts
+media
+
+proyecto/env_vars.py
